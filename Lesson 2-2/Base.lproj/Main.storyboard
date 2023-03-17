@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_72" orientation="portrait" appearance="dark"/>
+    <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lesson_2_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PzO-Vj-x0U">
-                                <rect key="frame" x="140" y="79" width="150" height="799"/>
+                                <rect key="frame" x="85" y="20" width="150" height="528"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lBk-Nq-YeW" userLabel="Traffic View">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="458"/>
@@ -45,7 +45,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7l-07-62S">
-                                        <rect key="frame" x="13.666666666666657" y="763" width="123" height="36"/>
+                                        <rect key="frame" x="13.5" y="492" width="123" height="36"/>
                                         <color key="backgroundColor" systemColor="systemMintColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="123" id="sFy-yQ-ZN8"/>
@@ -55,6 +55,9 @@
                                         <state key="normal" title="START">
                                             <color key="titleColor" systemColor="systemBackgroundColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changeLight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dXP-m8-Ixb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -67,6 +70,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PzO-Vj-x0U" secondAttribute="bottom" constant="20" id="aoL-LV-35c"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenColorTrafficLight" destination="VQ5-P4-0Py" id="FeN-TX-Cvu"/>
+                        <outlet property="redColorTrafficLight" destination="RgB-1S-eVR" id="0Tp-9j-3Hk"/>
+                        <outlet property="switchButton" destination="l7l-07-62S" id="jzp-DK-2Ka"/>
+                        <outlet property="yellowColorTrafficLight" destination="zVd-JQ-ilk" id="IzY-aJ-m0Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
