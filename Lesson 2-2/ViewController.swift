@@ -7,8 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+var alphaValue = (false, false, false)
 
+class ViewController: UIViewController {
     @IBOutlet var redColorTrafficLight: UIView!
     @IBOutlet var yellowColorTrafficLight: UIView!
     @IBOutlet var greenColorTrafficLight: UIView!
@@ -24,9 +25,38 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func changeLight() {
-        switchButton.setTitle("NEXT", for: .normal)
+    @IBAction func changeTitle() {
+        if switchButton.currentTitle == "START" {
+            switchButton.setTitle("NEXT", for: .normal)
+        }
+        changeLight()
     }
     
+    private func changeLight() {
+        switch alphaValue {
+        case (false, false, false):
+            redColorTrafficLight.alpha = 1.0
+            alphaValue.0.toggle()
+        case (true, false, false):
+            redColorTrafficLight.alpha = 0.3
+            yellowColorTrafficLight.alpha = 1.0
+            alphaValue.0.toggle()
+            alphaValue.1.toggle()
+        case (false, true, false):
+            yellowColorTrafficLight.alpha = 0.3
+            greenColorTrafficLight.alpha = 1.0
+            alphaValue.1.toggle()
+            alphaValue.2.toggle()
+        case (false, false, true):
+            greenColorTrafficLight.alpha = 0.3
+            redColorTrafficLight.alpha = 1.0
+            alphaValue.0.toggle()
+            alphaValue.2.toggle()
+        default:
+            break
+        }
+    }
 }
+
+
 
